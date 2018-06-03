@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+
+<!-- ********************************************************************
+COPYRIGHT : GNU General Public License (http://www.gnu.org/licenses/) 
+            See bottom of file for details.
+AUTHOR    : Adam Seitz
+EMAIL     : adseitz@svsu.edu
+URL       : csis.svsu.edu/~adseitz/cis255/favoriteproperties.html
+******************************************************************** -->
+
+<!--
+Twenty CSS properties demonstrated in this file are listed below. The properties that are also discussed are marked with asterisks. 
+	1. Border 
+	2. background-color
+	3. color
+	4. padding-top
+	5. padding-right
+	6. padding-bottom
+	7. padding-left
+	8. text-align
+	9. cursor
+	10.font-size
+	11.font-family
+	12.max-width
+	13.margin
+	14.width
+	15.height
+	16.font-style
+	17.font-weight
+	18.animation-name
+	19.animation-duration
+	20.float
+-->
+
+<html lang="en">
+	
+	
+	<!-- CSS style -->
+	<style>
+	
+		.button {
+		background-color: pink;
+		border: solid gray;
+		color: black;
+		padding-top: 20px;
+		padding-right: 10px;
+		padding-bottom: 10px;
+		padding-left: 5px;
+		text-align: center;
+		cursor: pointer;
+		font-size 15px;
+		}
+	
+		.title {
+		color: midnightblue;
+		text-align: center;
+		}
+
+		.header {
+		color: black;
+		text-align: center;
+		font-family: "Times New Roman", Times, serif;
+		}
+		
+		
+		.columns {column-count: 3;}
+		
+		
+		body{
+		max-width: 70%;
+		margin: auto;
+		background-color: lightsteelblue;
+		}
+		
+		@media screen and (min-width: 600px){
+			body{
+				background-color: lightcyan;
+			}
+		}
+		
+		.animated {
+		width: 25px;
+		height: 25px;
+		background-color: mediumpurple;
+		-webkit-animation-name: example; 
+		-webkit-animation: pulse 10s infinite;
+		animation-name: pulse;
+		animation-duration:4s infinite;
+		}
+
+		@keyframes pulse {
+		from {background-color: #2222;}
+		to {background-color: black;}
+		}	
+	
+		span{
+		float: center;
+		}
+	
+		font.fontexample{
+		font-size: 18px;
+		font-family: Impact;
+		font-weight: lighter;
+        font-style: oblique;
+		}
+	
+	</style>
+
+<a href="https://github.com/adseitz/cis255" class="button">Go to Github</a>
+
+
+<body>
+	<h1 class="title">Web App Development</h1>
+	<h1 class="header">Twenty Useful CSS Properties</h1>
+	<h3 class="header">By Adam Seitz</h3>
+	
+	<div align="center-left">
+	<div class="columns">
+
+            <p><strong><span><h2 class="header">Introduction.</h2></span></strong> This webpage shows 5 different CSS properties and their use in websites.</p>
+			
+			<hr>
+			
+			<strong><h3 class="header">The "border" Property</h3></strong>
+			<p>The <b>"border"</b> property allows us to create borders and use all of the border properties in one place.                                                
+			</p>
+			
+			<hr>
+			<p><strong><h3 class="header">The "animation" Property</h3></strong> The "animation" property puts a few other CSS properties into a single one. It uses timing-function, delay, iteration-count, direction, fill-mode, name, duration, and play-state. The following square uses the pulse animation.</p>  
+			<div class ="animated"></div>
+			<hr>
+			
+			<strong><h3 class="header">The "font" Property</h3></strong>
+            <p>The <b>"font"</b> property again puts multiple properties into one single property. It uses style, variant, weight, size, and family.This helps to give distinctive looks to certian <font class="fontexample">portions of your webpage.</font></p> 
+			
+			<hr>
+ 			<strong><h3 class="header">The "text-align" Property</h3></strong>
+			<p>The <b>"text-align"</b> property is extremely important when organizing your page correctly and putting it in a format that is familiar to the user. An example follows this paragraph.</p>
+			<div align="right">
+				<p>RIGHT</p>
+			</div>  			
+            <div align="center">
+				<p>CENTER</p>
+			</div>
+			<div align="left">
+				<p>LEFT</p>
+			</div>     
+			
+			<hr>
+            <strong><h3 class="header">The "color" Property</h3></strong>
+			<p>The <b>"color"</b> property is obviously useful, for if it did not exist every website would be boring white background and black text with some images possibly.
+			</p>
+			
+	</div>
+</div>
+<hr>
+<p><h2 class="header">Conclusion</h2> In conclusion, the 5 CSS properties explained are useful and I will look into using them in future projects. 
+</p>
+
+	<div align="center"><img src=https://i.imgur.com/324vbPQ.png></div></img>
+				
+</body>
+</html>
