@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.map demo</title>
+  <style>
+  div {
+    color: aqua;
+  }
+  p {
+    color: darkslategrey;
+    margin: 0;
+  }
+  a {
+    color: orchid;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<div id="demo0">Let AJAX change this text.</div>
+<p id="demo1"></p>
+<a id="demo2"></a>
+
+<br>
+    
+<button type="button" onclick="loadDoc();">Change Content</button>
+<button type="button" onclick="showByRoom();">Change Content2</button>
+
+<script>
+rt = " ";
+var newArray=[];
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo0").innerHTML = this.responseText;
+      document.getElementById("demo1").innerHTML = "";
+      document.getElementById("demo2").innerHTML = "";
+      rt = this.responseText;
+      obj = JSON.parse(rt); 
+    }
+  };
+  xhttp.open("GET", "http://csis.svsu.edu/~adseitz/cis255/junk.txt", true);
+  xhttp.send();
+}
+function sortByRoom(obj){
+  xx = "";
+  
+    for(var i =0; i < obj.courses.length ; i++) {
+        xx = obj.courses[i].prefix + " " 
+	         + obj.courses[i].courseNumber + " " 
+			 + obj.courses[i].meetingTimes[0].building + " " 
+			 + obj.courses[i].meetingTimes[0].room;
+        newArray.push(xx);
+    }
+    
+    newArray = newArray.sort();
+    
+}
+    
+function showByRoom(){
+    var courseOut = "";
+    sortByRoom(obj);
+    
+    var realArray = $.makeArray(newArray);
+    
+        courseOut = jQuery.map(realArray, function (val, i) {
+        return (val);
+        });
+        $("div").text(courseOut[0]);
+        $("p").text(courseOut[1]);
+        $("a").text(courseOut[2]);
+
+}
+    
+</script>
+    
+<br>
+<span> (A) I think the same origin policy of jquery is a good idea when privacy is a concern (which it should be most of the time). The same origin policy makes sure the javascript and jquery being used on the site is trusted and prevents most if not all "security breaches". </span>
+    
+<br>
+    
+<span> (B) A callback function is a function that waits for effects to complete before executing. It is the best way to have every line of a list be a different color because in some cases, the effect may not be implemented before displaying the text. It is also used to load one array into another. </span>
+
+</body>
+
+</html>
