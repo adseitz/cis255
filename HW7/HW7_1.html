@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>HW7_1 "Temp Convert" (6-30-18)</title>
+
+        <style>
+            .main span {
+                font-weight: bold;
+                font-size: 24px;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="main" ng-app="app1">
+            <div ng-controller="ctrl1">
+
+                <span>Click the button to convert Fahrenheit input to Celsius:</span>
+                <p>Fahrenheit: <input type="text" ng-model="fInput" /></p>
+
+                <button ng-click="convert()">Convert!</button>
+                <br>
+
+                <p>Celsius: <output type="text" ng-model="cOutput">{{calculation}}</p>
+
+            </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+
+    <script>
+    var app1 = angular.module('app1', []);
+
+    app1.controller('ctrl1', function($scope){
+        $scope.fInput = 0;
+
+
+        $scope.convert = function() {
+            $scope.calculation = (5/9) * ($scope.fInput - 32)
+        };
+
+    });
+
+    </script>
+
+	<br>
+    <form action="HW7_2.html">
+        <button type="submit">To Quadratic Solver!</button> 
+    </form> 
+    <br>
+    <form action="HW7_3.html">
+        <button type="submit">To Cubic Solver!</button> 
+    </form>
+    <br>
+    <form action="HW7_Index.html">
+        <button type="submit">To Home!</button>
+    </form>
+
+
+    </body>
+</html>
+

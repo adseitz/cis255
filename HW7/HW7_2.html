@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>HW7_2 QuadCalc (7-1-18)</title>
+        <style>
+            span {
+            font-weight: bold;
+            font-size: 24px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+   
+   <body>
+		
+		<span>Enter values in for "f(x) = Ax^2 + Bx + C" to solve the quadratic equation:</span>
+		
+		<div ng-app = "mainApp" data-ng-init="a=0;b=0;c=0" ng-controller="ctrl2">
+			<p>
+				A: <input type="number" ng-model="a"> <br>
+				B: <input type="number" ng-model="b"> <br>
+				C: <input type="number" ng-model="c"> <br>
+			</p>
+			
+			
+			<p>X1: {{(-1*b+Math.sqrt((b*b)-(4*a*c)))/(2*a)}}</p>
+			<p>X2: {{(-1*b-Math.sqrt((b*b)-(4*a*c)))/(2*a)}}</p>
+		</div>
+      
+		<script>
+			var mainApp = angular.module("mainApp", []);
+			
+			 
+			mainApp.controller('ctrl2', function($scope) {
+				$scope.Math = window.Math;
+			});
+			
+			function readValueFromBox(elementId){
+					return document.getElementById(elementId).value;
+			}
+		</script>
+      
+    	<form action="HW7_1.html">
+       		<button type="submit">To F->C Converter!</button> 
+    	</form> 
+    	<br>
+    	<form action="HW7_3.html">
+        	<button type="submit">To Cubic Solver!</button> 
+    	</form>
+	    <br>
+   		<form action="HW7_Index.html">
+        	<button type="submit">To Home!</button>
+    	</form>
+
+   </body>
+</html>

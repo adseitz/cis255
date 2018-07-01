@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>HW7_3 CubicCalc (7-1-18)</title>
+        <style>
+            span {
+            font-weight: bold;
+            font-size: 24px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+   
+   <body>
+		
+		<span>Enter values in for "f(x) = Ax^3 + Bx^2 + Cx + D" to solve the cubic equation:</span>
+		
+		<div ng-app = "mainApp" data-ng-init="a=0;b=0;c=0;d=0;f=(((3*c/a)-(b*b/a*a))/(3));g=(((2*b*b*b/a*a*a)-(9*b*c/a*a)-(27*d/a))/(27));h=((g*g/4)+(f*f*f/27));i=(Math.sqrt((g*g/4)-h));j=Math.cbrt(i);k=(Math.acos(-1*(g/2*i)));L=(j*-1);M=(Math.cos(k/3));N=(Math.sqrt(3)*Math.sin(k/3));P=((b/3*a)*-1)" ng-controller="ctrl3">
+			<p>
+				A: <input type="number" ng-model="a"> <br>
+				B: <input type="number" ng-model="b"> <br>
+				C: <input type="number" ng-model="c"> <br>
+                D: <input type="number" ng-model="d"> <br>
+			</p>
+			
+			
+			<p>X1: {{2*j*Math.cos(k/3)-(b/3*a)}}</p>
+			<p>X2: {{L*(M+N)+P}}</p>
+            <p>X3: {{L*(M-N)+P}}</p>
+		</div>
+      
+		<script>
+			var mainApp = angular.module("mainApp", []);
+			
+			 
+			mainApp.controller('ctrl3', function($scope) {
+				$scope.Math = window.Math;
+			});
+			
+			function readValueFromBox(elementId){
+					return document.getElementById(elementId).value;
+			}
+		</script>
+    <form action="HW7_1.html">
+        <button type="submit">To F->C Converter!</button> 
+    </form> 
+    <br>
+    <form action="HW7_2.html">
+        <button type="submit">To Quadratic Solver!</button> 
+    </form>
+	<br>
+    <form action="HW7_Index.html">
+        <button type="submit">To Home!</button>
+    </form>
+
+   </body>
+</html>
+
+
+
+
+
